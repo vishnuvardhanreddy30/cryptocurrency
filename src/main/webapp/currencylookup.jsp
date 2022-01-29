@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>I am JSP</h1>
+	<form action="fetchCryptocurrency">
+
+		<select name="currency" id="currency">
+			<option value="select">select</option>
+			<option value="cryptocurrency">Cryptocurrency</option>
+		</select> <br> <br> 
+		<input type="text" id="fname" name="fname" placeholder="IPAddress"><span> (Optional)</span> 
+		<br> <br>
+		<input type="submit" value="Submit">
+	</form>
 </body>
 </html>
