@@ -1,36 +1,34 @@
 package com.challenge.java.cryptocurrencylookup.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.challenge.java.cryptocurrencylookup.service.CryptoCurrencyLookup;
-import com.challenge.java.cryptocurrencylookup.service.RequestService;
 
 @Controller
 public class CurrencyLookupController {
 	
 	@Autowired
-	private CryptoCurrencyLookup CurrencyLookup;
+	private CryptoCurrencyLookup currencyLookup;
 	
-	@RequestMapping("/")
-	public String CurrencyLookup() {
+	@GetMapping(value="/")
+	public String currencyLookupHome() throws IOException {
 		
-		System.out.println("I am in controller");
 		return "home.jsp";
 	}
 	
-	@RequestMapping("/fetchCryptocurrency")
-	public ModelAndView CurrencyLookuwp(HttpServletRequest request, @RequestParam String ipAddress) {
+	@GetMapping(value = "/fetchCryptocurrency")
+	public ModelAndView CurrencyLookup(HttpServletRequest request, @RequestParam String ipAddress) throws IOException {
 		
-		System.out.println("I am in fetchCryptocurrency" +ipAddress);
-		
-		return CurrencyLookup.currencyLookup(request, ipAddress);
+		return currencyLookup.currencyLookup(request, ipAddress);
 	}
 
 }

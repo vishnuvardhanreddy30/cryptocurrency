@@ -23,7 +23,7 @@
 						<option value="cryptocurrency">Cryptocurrency</option>
 				</select></th>
 			<tr>
-				<td><br><input type="text" id="ipAddress" name="ipAddress"
+				<td><input type="text" id="ipAddress" name="ipAddress"
 					placeholder="IPAddress" class="form-control"></td>
 				<td><label>(Optional)</label></td>
 			<tr>

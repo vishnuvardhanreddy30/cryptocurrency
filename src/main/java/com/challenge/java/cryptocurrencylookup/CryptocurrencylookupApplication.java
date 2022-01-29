@@ -9,5 +9,4 @@ public class CryptocurrencylookupApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CryptocurrencylookupApplication.class, args);
 	}
-
 }

@@ -15,26 +15,35 @@ public class CryptoCurrencyLookupImpl implements CryptoCurrencyLookup {
 	@Autowired
 	private RequestService requestService;
 
+	private boolean flag;
+
 	@Override
 	public ModelAndView currencyLookup(HttpServletRequest request, String ipAddress) {
+
 		String clientIp;
 		if (ipAddress.isEmpty()) {
+			flag = true;
 			clientIp = requestService.getClientIp(request);
 		} else {
+			flag = false;
 			clientIp = ipAddress;
 		}
 
 		ModelAndView modelAndView = new ModelAndView("currencylookup.jsp");
 
-		System.out.println("clientIp: " + mapCurrency(clientIp));
-		
 		modelAndView.addObject("unitPrice", mapCurrency(clientIp));
 		return modelAndView;
 	}
-	
+
 	private String mapCurrency(String clientIP) {
-		String symbol = "U+20AC";
-		return "6.66";
-		
+
+		if (flag) {
+
+			// clientip address fetched from httpRequest
+			return "6.66";
+		} else
+
+			// clientip address provided by user
+			return "7.66";
 	}
 }
