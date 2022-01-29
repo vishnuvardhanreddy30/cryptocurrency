@@ -1,4 +1,4 @@
-package com.challenge.java.cryptocurrencylookup;
+package com.challenge.java.cryptocurrencylookup.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,23 +9,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.challenge.java.ip.service.RequestService;
+import com.challenge.java.cryptocurrencylookup.service.CryptoCurrencyLookup;
+import com.challenge.java.cryptocurrencylookup.service.RequestService;
 
 @Controller
 public class CurrencyLookupController {
 	
-	@Autowired(required=true)
-	private RequestService requestService;
+	@Autowired
+	private CryptoCurrencyLookup CurrencyLookup;
 	
 	@RequestMapping("/")
-	public String CurrencyLookup(HttpServletRequest request) {
+	public String CurrencyLookup() {
 		
 		System.out.println("I am in controller");
-		
-		ModelAndView modelAndView = new ModelAndView("currencylookup.jsp");
-		String clientIp = requestService.getClientIp(request);
-		modelAndView.addObject("clientIp", clientIp);
-		return "currencylookup.jsp";
+		return "home.jsp";
 	}
 	
 	@RequestMapping("/fetchCryptocurrency")
@@ -33,11 +30,7 @@ public class CurrencyLookupController {
 		
 		System.out.println("I am in fetchCryptocurrency" +ipAddress);
 		
-		ModelAndView modelAndView = new ModelAndView("currencylookup.jsp");
-		String clientIp = requestService.getClientIp(request);
-		System.out.println("clientIp: "+clientIp);
-		modelAndView.addObject("clientIp", clientIp);
-		return modelAndView;
+		return CurrencyLookup.currencyLookup(request, ipAddress);
 	}
 
 }

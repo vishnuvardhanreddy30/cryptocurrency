@@ -1,4 +1,4 @@
-package com.challenge.java.ip.service.impl;
+package com.challenge.java.cryptocurrencylookup.service.impl;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.challenge.java.ip.service.RequestService;
+import com.challenge.java.cryptocurrencylookup.service.RequestService;
 
 @Service
 public class RequestServiceImpl implements RequestService{
