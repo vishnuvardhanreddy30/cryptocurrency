@@ -18,20 +18,20 @@ public class CurrencyLookupController {
 	private RequestService requestService;
 	
 	@RequestMapping("/")
-	public ModelAndView CurrencyLookup(HttpServletRequest request) {
+	public String CurrencyLookup(HttpServletRequest request) {
 		
 		System.out.println("I am in controller");
 		
 		ModelAndView modelAndView = new ModelAndView("currencylookup.jsp");
 		String clientIp = requestService.getClientIp(request);
 		modelAndView.addObject("clientIp", clientIp);
-		return modelAndView;
+		return "currencylookup.jsp";
 	}
 	
 	@RequestMapping("/fetchCryptocurrency")
-	public ModelAndView CurrencyLookuwp(HttpServletRequest request) {
+	public ModelAndView CurrencyLookuwp(HttpServletRequest request, @RequestParam String ipAddress) {
 		
-		System.out.println("I am in controller");
+		System.out.println("I am in fetchCryptocurrency" +ipAddress);
 		
 		ModelAndView modelAndView = new ModelAndView("currencylookup.jsp");
 		String clientIp = requestService.getClientIp(request);
