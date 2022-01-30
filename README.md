@@ -31,10 +31,13 @@ Project is build using Maven and Run as jar
 'java -jar cryptocurrencylookup-0.0.1-SNAPSHOT.jar'
 
 ## Deployment
-Deployed the cryptocurrencylookup application
+Deployed the cryptocurrencylookup application.
 
  as Jenkins file. Please look JenkinsFile.
- or Docker file. please look Dockerfile
+ or Docker file. please look Dockerfile.
+ 
+ ### To Start application
+ Run Cryptocurrencylookup Application as 'java application' and access the application with [ http://localhost:8086/ ]
  
  ##### Architectures
 - Followed the Spring boot web application Architecture.
