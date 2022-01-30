@@ -23,6 +23,7 @@ Manual/Automatic input configuration has been made in the configuration files.
 - Spring thymeleaf
 - Maven
 - Mockito
+- Junit
 
 ### How to Build and Run
 Project is build using Maven and Run as jar
@@ -32,7 +33,8 @@ Project is build using Maven and Run as jar
 ## Deployment
 Deployed the cryptocurrencylookup application
 
- as Jenkins file. Please look JenkinsFile
+ as Jenkins file. Please look JenkinsFile.
+ or Docker file. please look Dockerfile
  
  ##### Architectures
 - Followed the Spring boot web application Architecture.
